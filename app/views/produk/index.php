@@ -86,7 +86,7 @@
             background-color: red;
             margin-bottom: 15px;
         }
-         h1 {
+         h2 {
             color: #333;
             background-color: #e0e0e0;
             padding: 20px;
@@ -132,7 +132,7 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
-        <h1>Total Stock = <?= $data['totalStok']['total']?></h1>
+        <h2>Total Stock = <?= $data['totalStok']['total']?></h2>
              <a href="<?= BASEURL;?>/auth/logout" class="btn btn-logout">Logout</a>
     </main>
 
