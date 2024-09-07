@@ -6,8 +6,8 @@
     <title>Login and Register Form</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -15,46 +15,69 @@
             margin: 0;
         }
         .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            transition: opacity 0.3s ease;
+        }
+        h2 {
+            margin: 0 0 20px 0;
+            text-align: center;
+            color: #333;
         }
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
         }
         .form-group input {
             width: 100%;
-            padding: 8px;
+            padding: 12px;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
         }
         .btn {
-            background-color: #007bff;
+            background-color: #5cb85c;
             color: white;
-            padding: 10px 15px;
+            padding: 12px 20px;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
         }
         .btn:hover {
-            background-color: #0056b3;
+            background-color: #4cae4c;
         }
         .switch {
-            margin-top: 15px;
+            margin-top: 20px;
             text-align: center;
+            font-size: 14px;
+        }
+        .switch a {
+            color: #5cb85c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .switch a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
-          <?php if(isset($_GET)): ?>
-                <p style="color : red">Username / Password salah</p>
-                <?php endif; ?>
+        <?php if(isset($_GET)): ?>
+            <p style="color: red; text-align: center;">Username / Password salah</p>
+        <?php endif; ?>
         <form id="loginForm" action="<?= BASEURL?>/auth/signin" method="post">
             <h2>Login</h2>
             <div class="form-group">
@@ -77,12 +100,10 @@
                 <label for="registerName">Username:</label>
                 <input name="username" type="text" id="registerName" required>
             </div>
-
             <div class="form-group">
                 <label for="registerPassword">Password:</label>
                 <input name="password" type="password" id="registerPassword" required>
             </div>
-
             <button type="submit" class="btn">Register</button>
             <div class="switch">
                 <p>Already have an account? <a href="#" onclick="toggleForm()">Login</a></p>

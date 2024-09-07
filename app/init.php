@@ -8,3 +8,5 @@ require_once 'core/QueryBuilder.php';
 require_once 'core/Model.php';
 require_once 'models/Produk_model.php';
 require_once 'models/Auth_model.php';
+// require_once 'views/layouts/header.php';
+// require_once 'views/layouts/footer.php';
